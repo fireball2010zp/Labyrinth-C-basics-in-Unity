@@ -7,6 +7,7 @@ namespace Maze
     public abstract class Bonus : MonoBehaviour, IExecute // базовый класс
     {
         private bool _isInteractable;
+
         public Transform _transform;
 
         public bool IsInteractable
@@ -42,7 +43,7 @@ namespace Maze
         protected abstract void Interaction();
 
         public abstract void Update();
-        
+        // видимый и для MonoBehaviour, и для IExecute
     }
 }
 

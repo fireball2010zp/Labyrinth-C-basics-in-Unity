@@ -9,12 +9,13 @@ namespace Maze
 
         private float heightFly;
         public float speedRotation;
-
+        // переменные для движения
 
         private void Awake()
         {
             heightFly = Random.Range(1f, 5f);
             speedRotation = Random.Range(13f, 40f);
+            // задали значения высоты полёта и скорости вращения
         }
 
         public void Fly()

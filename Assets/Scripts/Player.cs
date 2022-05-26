@@ -12,9 +12,11 @@ namespace Maze
         private void Awake()
         {
             _transform = transform;
-            // либо _transform = gameObject.transform;
-            // либо _transform = GetComponent<Transform>();
-            // всё одно и то же, определяем до начала игры
+            /* вызываем ссылку на transform (объекта Player)
+             либо _transform = gameObject.transform;
+             либо _transform = GetComponent<Transform>();
+             всё одно и то же, но более нагруженные варианты 
+             определяем до начала игры */
 
             if (GetComponent<Rigidbody>())
             {
@@ -26,8 +28,11 @@ namespace Maze
         }
 
         public override void Move(float x, float y, float z)
-        // переопределили (заглушка, контракт кода), если метод аьстрактный или виртуальный,
-        // то через override можем его расширить или изменить
+        /* переопределили (заглушка, реализуем контракт кода),
+         если метод абстрактный или виртуальный,
+         то через override можем его расширить или изменить
+         (уже с телом), должен иметь сигнатуру, как у базового метода.
+         сам метод будет вызываться в InputController */
         {
             if (_rb)
             {
@@ -37,7 +42,7 @@ namespace Maze
             {
                 Debug.Log("NO Rigidbody!");
             }
-
+        /* перемещаемся по физике, через импульс */
         }
 
     }
