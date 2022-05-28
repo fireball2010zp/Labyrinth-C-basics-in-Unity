@@ -17,10 +17,6 @@ namespace Maze
         public int Length => _interactiveObject.Length;
         // для считывания кол-ва элементов в массиве (длина)
 
-        void Start()
-        {
-
-        }
 
         public IExecute this[int curr]
         {

@@ -1,19 +1,45 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Maze
 {
-    public class GoodBonus : MonoBehaviour
+    public class GoodBonus : Bonus, IFly, IFlicker
     {
-        void Start()
-        {
+        private float heightFly = 3f;
 
+        [SerializeField] private Material _material;
+
+        public int Point = 1;
+
+        public event Action<int> Addpoints = delegate (int i) { };
+
+        void Awake()
+        // для обращения к материалу (мерцание)
+        {
+            _material = GetComponent<Renderer>().material;
+            _transform = GetComponent<Transform>();
         }
 
-        void Update()
+        public override void Update()
         {
+            Fly();
+            Flick();
+        }
 
+        public void Flick()
+        {
+            _material.color = new Color(_material.color.r, _material.color.g, _material.color.b, Mathf.PingPong(Time.time, 1.0f));
+        }
+
+        public void Fly()
+        {
+            _transform.position = new Vector3(_transform.position.x, Mathf.PingPong(Time.time, heightFly), _transform.position.z);
+        }
+
+        protected override void Interaction()
+        {
+            Addpoints.Invoke(Point);
         }
     }
 }

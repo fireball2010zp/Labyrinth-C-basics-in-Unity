@@ -10,6 +10,9 @@ namespace Maze
 
         public Transform _transform;
 
+        protected Color _color;
+        // защищен, но доступен в пределах наследования
+
         public bool IsInteractable
         {
             get { return _isInteractable; }
@@ -21,19 +24,27 @@ namespace Maze
             }
         }
 
-        private void Awake()
+        /*private abstract void Awake()
         {
             _transform = GetComponent<Transform>();
-        }
+        }*/
 
         void Start()
         {
             IsInteractable = true;
+
+            _color = Random.ColorHSV();
+
+            if(TryGetComponent(out Renderer renderer))
+            {
+                renderer.sharedMaterial.color = _color;
+            }
+
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (IsInteractable || other.CompareTag("Player"))
             {
                 Interaction();
                 IsInteractable = false;
