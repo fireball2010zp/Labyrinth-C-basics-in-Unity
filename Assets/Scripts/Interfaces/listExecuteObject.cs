@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Maze
 {
@@ -17,6 +18,17 @@ namespace Maze
         public int Length => _interactiveObject.Length;
         // для считывания кол-ва элементов в массиве (длина)
 
+        public ListExecuteObject()
+        {
+            Bonus[] BonusObject = Object.FindObjectsOfType<Bonus>();
+            for (int i = 0; i < BonusObject.Length; i++)
+            {
+                if(BonusObject[i] is IExecute intObj)
+                {
+                    AddExecuteObject(intObj);
+                }
+            }
+        }
 
         public IExecute this[int curr]
         {
