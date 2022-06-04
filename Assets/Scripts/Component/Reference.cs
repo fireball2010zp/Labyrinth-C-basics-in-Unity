@@ -9,6 +9,7 @@ namespace Maze
         // ссылки на префабы
         private GameObject _bonusLabel;
         private GameObject _endGameLabel;
+        private GameObject _victoryLabel;
         private GameObject _restartButton;
         private Canvas _canvas;
         private Camera _mainCamera;
@@ -41,6 +42,21 @@ namespace Maze
             }
             set { _endGameLabel = value; }
         }
+
+        public GameObject VictoryLabel
+        { 
+            get
+            {
+                if (_victoryLabel == null)
+                {
+                    GameObject victoryPrefab = Resources.Load<GameObject>("UI/Victory");
+                    _victoryLabel = Object.Instantiate(victoryPrefab, Canvas.transform);
+                }
+                return _victoryLabel;
+            }
+            set { _victoryLabel = value; }
+        }
+
 
         public GameObject RestartButton
         {

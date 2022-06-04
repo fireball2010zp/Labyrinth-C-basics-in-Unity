@@ -13,6 +13,7 @@ namespace Maze
         public int Point = 1;
 
         public event Action<int> AddPoints = delegate (int i) { };
+        public event Action<string> OnCaughtPlayer = delegate (string str) { };
 
         void Awake()
         // для обращения к материалу (мерцание)
@@ -40,6 +41,7 @@ namespace Maze
         protected override void Interaction()
         {
             AddPoints.Invoke(Point);
+            OnCaughtPlayer.Invoke(gameObject.name);
         }
     }
 }
