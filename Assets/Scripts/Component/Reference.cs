@@ -89,7 +89,7 @@ namespace Maze
         {
             get 
             {
-                if (!_mainCamera)
+                if (_mainCamera == null)
                 {
                     _mainCamera = Camera.main;
                 }

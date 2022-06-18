@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ArrayOfSVect3 xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SVect3>
+    <X>16.61</X>
+    <Y>2.23244953</Y>
+    <Z>-20.68</Z>
+  </SVect3>
+  <SVect3>
+    <X>16.86</X>
+    <Y>1.26659393</Y>
+    <Z>-12.2</Z>
+  </SVect3>
+  <SVect3>
+    <X>12.42</X>
+    <Y>1.26659393</Y>
+    <Z>-7.71999931</Z>
+  </SVect3>
+  <SVect3>
+    <X>21.61</X>
+    <Y>1.26659393</Y>
+    <Z>-7.88999939</Z>
+  </SVect3>
+  <SVect3>
+    <X>16.54</X>
+    <Y>1.26659393</Y>
+    <Z>-2.60000038</Z>
+  </SVect3>
+  <SVect3>
+    <X>7.49</X>
+    <Y>1.26659393</Y>
+    <Z>-2.61000061</Z>
+  </SVect3>
+</ArrayOfSVect3>

@@ -141,6 +141,8 @@ namespace Maze
                 Time.timeScale = 0f;
             }
 
+
+
             /*
             IEnumerator etr = _interactiveObject.GetEnumerator();
 
