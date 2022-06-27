@@ -100,15 +100,6 @@ namespace Maze
             _viewBonus.Display(_bonusCount);
         }
 
-        /*
-        // обработчик взаимодействия с BadBonus
-        public void GameOver(string name, Color color)
-        {
-            Debug.Log(name + " color:" + color);
-            _player.transform.position = new Vector3(22f, 1f, -20f);
-        }
-        */
-
         public void VictoryGame(string name)
         {
             Debug.Log("Victory!!!");
@@ -134,25 +125,10 @@ namespace Maze
             if (_bonusCount == 5)
             {
                 _viewVictoryGame.Victory(_bonusCount);
-                //goodBonus.OnCaughtPlayer += VictoryGame;
-                /* ??? изначально не сработал, поэтому вызов кнопки Restart и
-                 остановку игрового времени хардкодом прописал ниже, так и не разобрался */
                 _restartButton.gameObject.SetActive(true);
                 Time.timeScale = 0f;
             }
 
-
-
-            /*
-            IEnumerator etr = _interactiveObject.GetEnumerator();
-
-            while (etr.MoveNext())
-            {
-                Debug.Log(etr.Current);
-            }
-            etr.Reset();
-
-            */
         }
     }
 }
