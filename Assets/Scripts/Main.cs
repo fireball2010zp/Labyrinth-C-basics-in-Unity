@@ -35,7 +35,7 @@ namespace Maze
 
             _reference = new Reference();
 
-            _inputController = new InputController(_player.GetComponent<Unit>());
+            _inputController = new InputController(_player.GetComponent<PlayerController>());
             // обращение к базовому классу через дочерний
 
             _cameraController = new CameraController (_player.transform, _reference.MainCamera.transform);

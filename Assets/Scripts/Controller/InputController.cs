@@ -7,14 +7,14 @@ namespace Maze
     public class InputController : IExecute
     /* скрипт никак не связан с Unity */
     {
-        private readonly Unit _player;
+        private PlayerController _player;
         // вызов игрока по базовому классу
 
         private float horizontal;
         private float vertical;
         // оси
 
-        public InputController(Unit player)
+        public InputController(PlayerController player)
         // конструктор с ссылкой на Unit, инициализация в теле
         {
             _player = player;
